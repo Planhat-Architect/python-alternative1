@@ -18,7 +18,7 @@ import json
 
 import pandas as pd 
 
-from planhat.models.custom_fields import field_creator
+from planhat.models import custom_fields
 from planhat.helpers.multi_threading import multi_threaded_req
 
 
@@ -45,7 +45,7 @@ def import_fields(file_path):
 
 def upload_fields(fields_dict):
     # import fields bulk json 
-    res = multi_threaded_req(field_creator.create_field, fields_dict)
+    res = multi_threaded_req(custom_fields.create_field, fields_dict)
     # unpack results 
     results_list = list(map(lambda x: x.result(), res))
     # print resutls 
