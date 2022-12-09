@@ -18,7 +18,7 @@ import json
 
 import pandas as pd 
 
-from planhat.models import custom_fields
+from planhat import custom_fields
 from planhat.helpers.multi_threading import multi_threaded_req
 
 

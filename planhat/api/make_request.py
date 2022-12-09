@@ -7,14 +7,7 @@ import pandas as pd
 from planhat.api import config
 
 
-# Planhat base URL 
-base_url = 'https://api.planhat.com/'
 
-# request headers for Planhat API. Auth via Bearer token updated in planhat_api.config module
-headers = {
-    "content-type":"application/json",
-    "Authorization":f"Bearer {config.API_KEY}",
-}
 
 def error_hanlder(res):
     '''
@@ -47,8 +40,8 @@ def post(endpoint, data):
         return 'No Payload, please include POST Data'
 
     res = requests.post(
-        url= base_url + endpoint,
-        headers=headers,
+        url= config.base_url + endpoint,
+        headers=config.headers,
         data=data,
         timeout=120
     )
@@ -71,8 +64,8 @@ def put(endpoint, data):
         return 'No Payload, please include PUT Data'
 
     res = requests.put(
-        url= base_url + endpoint,
-        headers=headers,
+        url= config.base_url + endpoint,
+        headers=config.headers,
         data=data,
         timeout=120
     )
@@ -90,8 +83,8 @@ def get(endpoint, data=None):
     '''
 
     res = requests.get(
-        url=base_url + endpoint,
-        headers=headers,
+        url=config.base_url + endpoint,
+        headers=config.headers,
         data=data,
         timeout=120
     )
@@ -110,8 +103,8 @@ def delete(endpoint, _id):
     '''
 
     res = requests.delete(
-        url=base_url + endpoint + '/' + _id,
-        headers=headers,
+        url=config.base_url + endpoint + '/' + _id,
+        headers=config.headers,
         timeout=120
     )
 

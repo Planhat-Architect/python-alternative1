@@ -17,6 +17,21 @@ Getting API Key:
 '''
 import os
 
+## Authentication
 
-# for production get from docker secrets 
-API_KEY = os.getenv('ph_api_key')
+# From env 
+# API_KEY = os.getenv('ph_api_key')
+
+# From .txt
+API_KEY = open('./planhat/api/api_key.txt').read().replace('\n','')
+
+## API Setup
+
+# Planhat base URL 
+base_url = 'https://api.planhat.com/'
+
+# request headers for Planhat API. Auth via Bearer token updated in planhat_api.config module
+headers = {
+    "content-type":"application/json",
+    "Authorization":f"Bearer {API_KEY}",
+}
