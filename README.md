@@ -2,22 +2,12 @@
 Python Planhat API Library for doing work with Planhat locally
 [Planhat API Docs](https://docs.planhat.com/#introduction)
 
-# WIP/To-Do
-- [] campaings
-- [] companies 
-- [] conversations 
-- [] invoices 
-- [] end users
-- [] Issues
-- [] licenses 
-- [] Notes
-- [] NPS
-- [] Opportuniites 
-- [] Projects
-- [] Objectives 
-- [] Sales
-- [] Tasks
-- [] Tickets
-- [] Users 
-- [] Workspaces 
-- [] Metrics 
+## Access different models via the Models Module
+
+### Methods 
+- Create: create a record 
+- Update: Update based on Id
+- Get by Id: Get record by Id
+- Get all: Query a list of the model 
+- Delete: Delete a record by Id
+- Bulk Upsert: Upload a list of records 
