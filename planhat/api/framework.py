@@ -55,6 +55,7 @@ class Model:
             - Custom Ids
                 - id_type = 'sourceId'
                 - id_type = 'externalId'
+            - If custom field, only planhat _id will work
         '''
         # convert to json 
         upload_json = json.dumps(upload_obj)
@@ -82,22 +83,21 @@ class Model:
             endpoint=self.model_endpoint +'/'+ id_endpoint + identifier
         )
 
-    def get_all(self, limit : int = 5000, offset : int = None, sort : str = None):
+    def get_all(self, limit : int = 5000, **kwargs):
         '''Get a list of all assets
         
         Query Params:
         - limit : int
             - Limit of results to pull
-        - offset : int
-            - Offset of results to pull
-        - sort : str
-            - Sort parameter for results'''
+        - kwargs:
+            - Query parameters for get all. Query parameters arguments must have the same name as query params'''
         # set url params
-        url_params = '?limit=' + str(limit)
-        if offset != None:
-            url_params += '&offset=' + str(offset)
-        if sort != None:
-            url_params += '&sort=' + sort
+        if len(kwargs.keys()) > 0:
+            url_params = '&'.join([f'{key}={value}' for key, value in kwargs.items()])
+        else:
+            url_params = ''
+
+        '?limit=' + limit + url_params
         # return all
         return make_request.get(endpoint=self.model_endpoint)
 
