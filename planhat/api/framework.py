@@ -63,7 +63,7 @@ class Model:
         id_endpoint = id_endpoints.get_id_endpoint(id_type)
         # return response 
         return make_request.put(
-            endpoint=self.model_endpoint +'/'+ id_endpoint + identifier[1],
+            endpoint=self.model_endpoint +'/'+ id_endpoint + identifier,
             data=upload_json
         )
 
