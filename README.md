@@ -2,6 +2,10 @@
 Python Planhat API Library for doing work with Planhat locally
 [Planhat API Docs](https://docs.planhat.com/#introduction)
 
+## Authentication
+- Authentication details are found in the planhat/api/config file. 
+- Currenlty it's set to look for a secret.txt file, but you can update that however you'd like and things should work as long as you're sending a string value to the API_KEY variable.
+
 ## Access different models via the Models Module
 
 ### Methods 
