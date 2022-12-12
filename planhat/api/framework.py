@@ -96,10 +96,10 @@ class Model:
             url_params = '&'.join([f'{key}={value}' for key, value in kwargs.items()])
         else:
             url_params = ''
-
-        '?limit=' + limit + url_params
+        # get URL Params
+        url_parmas = '?limit=' + str(limit) + url_params
         # return all
-        return make_request.get(endpoint=self.model_endpoint)
+        return make_request.get(endpoint=self.model_endpoint + url_params)
 
     def bulk_upsert(self, upload_list : list):
         '''Upload a list of dictionaries (asset records)
