@@ -11,6 +11,7 @@ Python Planhat API Library for doing work with Planhat locally
 - Get all: Query a list of the model 
 - Delete: Delete a record by Id
 - Bulk Upsert: Upload a list of records 
+- Open Model Docs: Opens the documentation at the section of the model you're working with
 
 #### Disclaimer: 
 - This library was written by me, an end user of planhat, so there is no warranty with the use of this code as stated in the licensing.
