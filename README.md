@@ -4,7 +4,19 @@ Python Planhat API Library for doing work with Planhat locally
 
 ## Authentication
 - Authentication details are found in the planhat/api/config file. 
-- Currenlty it's set to look for a secret.txt file, but you can update that however you'd like and things should work as long as you're sending a string value to the API_KEY variable.
+- To authenticate. Import the Auth Class and pass your token as a string.
+    - If you store secrets externally, then you can leverage this 
+    - Can be connected with docker secrets as well if you write your own script to unpack them into string values 
+    - Code example: 
+```
+from planhat.api.auth import AuthenticatePlanhat
+# authenticate with API Key
+AuthenticatePlanhat(
+    API_KEY='string_value'
+)
+# once authenticated, import the models module
+from planhat import models
+```
 
 ## Access different models via the Models Module
 
