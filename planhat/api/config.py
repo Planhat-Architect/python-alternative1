@@ -19,11 +19,8 @@ import os
 
 ## Authentication
 
-# From env 
-# API_KEY = os.getenv('ph_api_key')
-
-# From .txt
-API_KEY = open('./planhat/api/api_key.txt').read().replace('\n','')
+# os.environ['PLANHAT_API_KEY'] = ''
+API_KEY = os.environ['PLANHAT_API_KEY']
 
 ## API Setup
 
