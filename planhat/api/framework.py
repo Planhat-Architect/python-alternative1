@@ -97,7 +97,7 @@ class Model:
         else:
             url_params = ''
         # get URL Params
-        url_parmas = '?limit=' + str(limit) + url_params
+        url_params = '?limit=' + str(limit) + url_params
         # return all
         return make_request.get(endpoint=self.model_endpoint + url_params)
 
