@@ -17,10 +17,6 @@ Getting API Key:
 '''
 import os
 
-## Authentication
-
-# os.environ['PLANHAT_API_KEY'] = ''
-API_KEY = os.environ['PLANHAT_API_KEY']
 
 ## API Setup
 
@@ -28,7 +24,10 @@ API_KEY = os.environ['PLANHAT_API_KEY']
 base_url = 'https://api.planhat.com/'
 
 # request headers for Planhat API. Auth via Bearer token updated in planhat_api.config module
-headers = {
-    "content-type":"application/json",
-    "Authorization":f"Bearer {API_KEY}",
-}
+def get_headers():
+    # Authentication
+    API_KEY = os.environ['PLANHAT_API_KEY']
+    return {
+        "content-type":"application/json",
+        "Authorization":f"Bearer {API_KEY}",
+    }

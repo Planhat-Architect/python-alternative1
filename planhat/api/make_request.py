@@ -41,7 +41,7 @@ def post(endpoint, data):
 
     res = requests.post(
         url= config.base_url + endpoint,
-        headers=config.headers,
+        headers=config.get_headers(),
         data=data,
         timeout=120
     )
@@ -65,7 +65,7 @@ def put(endpoint, data):
 
     res = requests.put(
         url= config.base_url + endpoint,
-        headers=config.headers,
+        headers=config.get_headers(),
         data=data,
         timeout=120
     )
@@ -84,7 +84,7 @@ def get(endpoint, data=None):
 
     res = requests.get(
         url=config.base_url + endpoint,
-        headers=config.headers,
+        headers=config.get_headers(),
         data=data,
         timeout=120
     )
@@ -104,7 +104,7 @@ def delete(endpoint, _id):
 
     res = requests.delete(
         url=config.base_url + endpoint + '/' + _id,
-        headers=config.headers,
+        headers=config.get_headers(),
         timeout=120
     )
 
